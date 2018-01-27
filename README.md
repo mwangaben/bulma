@@ -1,8 +1,8 @@
-# Laravel 5.5.x Front-end Preset For Bulma
+# Bulma Frontend Preset For Laravel Framework 5.5 and Up
 
 Preset for Bulma scaffolding on new Laravel 5.5.x project.
 
-*Current version*: **Bulma 0.6.1**
+*Current version*: **Bulma 0.6.2** + **Bulma Extensions 0.7.2**
 
 
 ## Usage
@@ -14,3 +14,10 @@ Preset for Bulma scaffolding on new Laravel 5.5.x project.
 6. Configure your favorite database (mysql, sqlite etc.)
 7. `php artisan migrate` to create basic user tables.
 8. `php artisan serve` (or equivalent) to run server and test preset.
+
+## Bulma Extensions
+1. It is a set of missing [Bulma.io](https://bulma.io/) functionalities in the form of extensions. More info at [https://wikiki.github.io/](https://wikiki.github.io/)
+2. Adjust `bulma.sass`, `bulma-extensions.sass`, `bulma-extensions.js` and `app.js` as per your need.
+
+## Screenshots
+![Bulma login screen](/screenshots/bulma_login_screen.jpg)

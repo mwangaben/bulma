@@ -40,7 +40,8 @@ class BulmaPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            'bulma' => '^0.6.1',
+            'bulma' => '^0.6.2',
+            'bulma-extensions' => '^0.7.0',
         ] + Arr::except($packages, ['bootstrap-sass', 'foundation-sites']);
     }
 
@@ -61,6 +62,7 @@ class BulmaPreset extends Preset
 
         copy(__DIR__.'/bulma-stubs/initial-variables.sass', resource_path('assets/sass/initial-variables.sass'));
         copy(__DIR__.'/bulma-stubs/bulma.sass', resource_path('assets/sass/bulma.sass'));
+        copy(__DIR__.'/bulma-stubs/bulma-extensions.sass', resource_path('assets/sass/bulma-extensions.sass'));
         copy(__DIR__.'/bulma-stubs/app.scss', resource_path('assets/sass/app.scss'));
     }
 
@@ -72,11 +74,14 @@ class BulmaPreset extends Preset
      */
     protected static function updateBootstrapping()
     {
-        (new Filesystem)->delete(
-            resource_path('assets/js/bootstrap.js')
-        );
+        $file = new Filesystem;
+
+        $file->delete(resource_path('assets/js/bootstrap.js'));
+        $file->delete(resource_path('assets/js/app.js'));
 
         copy(__DIR__.'/bulma-stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__.'/bulma-stubs/app.js', resource_path('assets/js/app.js'));
+        copy(__DIR__.'/bulma-stubs/bulma-extensions.js', resource_path('assets/js/bulma-extensions.js'));
     }
 
 
